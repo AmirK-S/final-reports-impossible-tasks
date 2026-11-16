@@ -18,7 +18,7 @@ def walk(prefix, v):
     if isinstance(v, dict) and {"k", "n", "lo", "hi"} <= set(v):
         out[prefix + ".k"] = str(v["k"]); out[prefix + ".n"] = str(v["n"]); out[prefix + ".kn"] = f"{v['k']}/{v['n']}"
         out[prefix + ".pct"] = (f"{100 * v['k'] / v['n']:.0f}\\,\\%" if v["n"] else "n/a")
-        out[prefix + ".ci"] = f"[{100 * v['lo']:.0f}, {100 * v['hi']:.0f}]\\,\\%"
+        out[prefix + ".ci"] = f"[{100 * v['lo']:.0f}, {100 * v['hi']:.0f}]"
         return
     if isinstance(v, dict):
         for k, x in v.items():
@@ -54,7 +54,7 @@ for tag, d in (("frozen", "derive-v6"), ("ext", "derive-v6x")):
         lo, hi = X.clopper_pearson(k, n)
         out[f"fact.{tag}.pooled.{c}.kn"] = f"{k}/{n}"
         out[f"fact.{tag}.pooled.{c}.pct"] = f"{100 * k / n:.0f}\\,\\%"
-        out[f"fact.{tag}.pooled.{c}.ci"] = f"[{100 * lo:.0f}, {100 * hi:.0f}]\\,\\%"
+        out[f"fact.{tag}.pooled.{c}.ci"] = f"[{100 * lo:.0f}, {100 * hi:.0f}]"
 reg = {r["key"]: r["value"] for r in csv.DictReader(open(os.path.expanduser(
     "~/Desktop/Code/Projets/hackathon-swarm-alignment/banc/analyse/registre.csv")))}
 for k in ("fact.HF1.holm_p", "fact.HF2.holm_p", "fact.HF1.effect_mean", "fact.HF2.effect_mean"):
