@@ -12,7 +12,7 @@ ChatGPT plan).
 
 ## Order of work (see `git log`)
 
-1. `217f2ff` pre-registration alone (`coding/PREREG.md`).
+1. `e4c1867` pre-registration alone (`coding/PREREG.md`).
 2. Coding materials fixed before coding: word-list reference coder, item builder, coder instructions, blind items, key.
 3. Amendment 2 and the statistics module, before any coder output was read (`coding/AMENDMENTS.md`).
 4. Coder outputs, agreement, adjudication, results, paper.

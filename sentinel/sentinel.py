@@ -51,6 +51,7 @@ def run_suite(tree, task, variant):
 
 
 def probe(run_dir, task=None):
+    run_dir = os.path.expanduser(run_dir)
     task = task or os.path.basename(os.path.dirname(run_dir.rstrip("/")))
     tree = os.path.join(run_dir, "work_final") if os.path.isdir(os.path.join(run_dir, "work_final")) else run_dir
     rg, og = run_suite(tree, task, "good"); rb, ob = run_suite(tree, task, "bad")
