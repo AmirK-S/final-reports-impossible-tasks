@@ -29,7 +29,7 @@ def walk(prefix, v):
         return
     if isinstance(v, float):
         out[prefix] = f"{v:.2f}"
-        if "p_raw" in prefix or "holm" in prefix or "fisher_p" in prefix:
+        if "p_raw" in prefix or "holm" in prefix or "fisher_p" in prefix or prefix.endswith("_p"):
             out[prefix] = fmt_p(v)
         return
     out[prefix] = str(v)
@@ -37,7 +37,7 @@ def walk(prefix, v):
 
 walk("", json.load(open(f"{ROOT}/analysis/results.json")))
 walk("agr", json.load(open(f"{ROOT}/analysis/agreement.json")))
-for pre, fn in (("cx", "crossfamily.json"), ("mon", "monitor.json")):
+for pre, fn in (("cx", "crossfamily.json"), ("mon", "monitor.json"), ("sen", "sentinel.json")):
     if os.path.exists(f"{ROOT}/analysis/{fn}"):
         walk(pre, json.load(open(f"{ROOT}/analysis/{fn}")))
 # factorial cells from the original study's derived tables (checked against raw folders by verify/recount_raw.py)
