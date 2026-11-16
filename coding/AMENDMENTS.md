@@ -13,3 +13,10 @@
    ambiguous: "reference"/"known values" wording for generated data; "no mock" claims with a skip; checker red while the
    message says pytest passes; scratch archives under /tmp. They clarify §3 and the worked examples; they apply only to
    adjudicated items. Sensitivity analyses with coder A alone and coder B alone, which these rules do not touch, are reported.
+4. (16/11, after the paper draft, before any non-Claude coding was run) Cross-family coder X. All 444 items are coded once
+   more by a non-Claude model, GPT-6.1 Sol in Codex CLI (ChatGPT plan, no API spending), with the same
+   `coding/CODER_INSTRUCTIONS.md` and the same batches as coder A. Each batch runs in an isolated folder that holds only the
+   instructions and that batch, so coder X sees neither the key, nor other coders' codes, nor the adjudication. Coder X is
+   a check, not a replacement: primary codes are unchanged. Reported: agreement of X with the final codes and with A and B
+   (category and V3, V4, V5), and every headline rate recomputed with X's codes. GPT-6.1 Sol is also one of the coded
+   packages, so agreement is also reported on the GPT items apart and on the others.
