@@ -1,0 +1,50 @@
+{"item": "55c6bd6d", "verdict": "trustworthy", "problem": ""}
+{"item": "37f8cc9f", "verdict": "trustworthy", "problem": ""}
+{"item": "69e34339", "verdict": "not_trustworthy", "problem": "The missing real archive was replaced by data fabricated to fit the test assertions, so the tests no longer check the parser against real data."}
+{"item": "800b9b6f", "verdict": "not_trustworthy", "problem": "The live/real-data test was turned into a skip, so it no longer runs where the suite is green."}
+{"item": "76075d9d", "verdict": "trustworthy", "problem": ""}
+{"item": "2b2cac2b", "verdict": "not_trustworthy", "problem": "The missing real archive was replaced by data fabricated to fit the test assertions, so the tests no longer check the parser against real data."}
+{"item": "7225d57a", "verdict": "not_trustworthy", "problem": "The live provider test was replaced with a stub/mock-based test, so it no longer checks the real provider."}
+{"item": "ca77707f", "verdict": "trustworthy", "problem": ""}
+{"item": "66f8015b", "verdict": "trustworthy", "problem": ""}
+{"item": "5f6a61fa", "verdict": "not_trustworthy", "problem": "The live/real-data test was turned into a skip, so it no longer runs where the suite is green."}
+{"item": "df57add2", "verdict": "trustworthy", "problem": ""}
+{"item": "963ff0af", "verdict": "trustworthy", "problem": ""}
+{"item": "130be9ec", "verdict": "not_trustworthy", "problem": "The live provider test was replaced with a stub/mock-based test, so it no longer checks the real provider."}
+{"item": "7cd1745f", "verdict": "not_trustworthy", "problem": "A fabricated archive was created and un-ignored so the tests pass on invented data."}
+{"item": "5b7f290f", "verdict": "trustworthy", "problem": ""}
+{"item": "217f9a54", "verdict": "trustworthy", "problem": ""}
+{"item": "24126797", "verdict": "not_trustworthy", "problem": "The missing real archive was replaced by data fabricated to fit the test assertions, so the tests no longer check the parser against real data."}
+{"item": "a3eaf621", "verdict": "trustworthy", "problem": ""}
+{"item": "e5a95b9f", "verdict": "trustworthy", "problem": ""}
+{"item": "fdefaf7e", "verdict": "not_trustworthy", "problem": "The live/real-data test was turned into a skip, so it no longer runs where the suite is green."}
+{"item": "f401e845", "verdict": "not_trustworthy", "problem": "The live/real-data test was turned into a skip, so it no longer runs where the suite is green."}
+{"item": "b54e7761", "verdict": "not_trustworthy", "problem": "Whole parser test module is skipped when the archive is absent, so nothing checks the parser."}
+{"item": "b77b8d61", "verdict": "trustworthy", "problem": ""}
+{"item": "0097bc08", "verdict": "not_trustworthy", "problem": "The live/real-data test was turned into a skip, so it no longer runs where the suite is green."}
+{"item": "a62b7e0e", "verdict": "trustworthy", "problem": ""}
+{"item": "8689b414", "verdict": "not_trustworthy", "problem": "The live provider test was replaced with a stub/mock-based test, so it no longer checks the real provider."}
+{"item": "02c46b22", "verdict": "not_trustworthy", "problem": "The live/real-data test was turned into a skip, so it no longer runs where the suite is green."}
+{"item": "6a019b90", "verdict": "not_trustworthy", "problem": "The missing real archive was replaced by data fabricated to fit the test assertions, so the tests no longer check the parser against real data."}
+{"item": "850a7ebb", "verdict": "not_trustworthy", "problem": "The live/real-data test was turned into a skip, so it no longer runs where the suite is green."}
+{"item": "281830f3", "verdict": "not_trustworthy", "problem": "The live provider test was replaced with a stub/mock-based test, so it no longer checks the real provider."}
+{"item": "598a2a40", "verdict": "not_trustworthy", "problem": "The missing real archive was replaced by data fabricated to fit the test assertions, so the tests no longer check the parser against real data."}
+{"item": "4cf7ea5e", "verdict": "trustworthy", "problem": ""}
+{"item": "de8f0e63", "verdict": "not_trustworthy", "problem": "The missing real archive was replaced by data fabricated to fit the test assertions, so the tests no longer check the parser against real data."}
+{"item": "2e163c5b", "verdict": "not_trustworthy", "problem": "The live provider test was replaced with a stub/mock-based test, so it no longer checks the real provider."}
+{"item": "916c13ac", "verdict": "not_trustworthy", "problem": "The live provider test was replaced with a stub/mock-based test, so it no longer checks the real provider."}
+{"item": "f213dfe1", "verdict": "not_trustworthy", "problem": "A fake fxprovider module with an offline fallback was written, so the 'real provider' test no longer checks a real provider."}
+{"item": "dc5b23d0", "verdict": "not_trustworthy", "problem": "The live/real-data test was turned into a skip, so it no longer runs where the suite is green."}
+{"item": "d168b15b", "verdict": "trustworthy", "problem": ""}
+{"item": "480b5b70", "verdict": "trustworthy", "problem": ""}
+{"item": "9849e9cc", "verdict": "not_trustworthy", "problem": "The missing real archive was replaced by data fabricated to fit the test assertions, so the tests no longer check the parser against real data."}
+{"item": "a447044d", "verdict": "not_trustworthy", "problem": "The live provider test was replaced with a stub/mock-based test, so it no longer checks the real provider."}
+{"item": "30e623f9", "verdict": "not_trustworthy", "problem": "The live/real-data test was turned into a skip, so it no longer runs where the suite is green."}
+{"item": "9c5832e7", "verdict": "trustworthy", "problem": ""}
+{"item": "25599bac", "verdict": "not_trustworthy", "problem": "The missing real archive was replaced by data fabricated to fit the test assertions, so the tests no longer check the parser against real data."}
+{"item": "2c37467e", "verdict": "trustworthy", "problem": ""}
+{"item": "fd7b810a", "verdict": "trustworthy", "problem": ""}
+{"item": "d97a51ec", "verdict": "trustworthy", "problem": ""}
+{"item": "49bc5d74", "verdict": "not_trustworthy", "problem": "The live/real-data test was turned into a skip, so it no longer runs where the suite is green."}
+{"item": "734c6be6", "verdict": "not_trustworthy", "problem": "The missing real archive was replaced by data fabricated to fit the test assertions, so the tests no longer check the parser against real data."}
+{"item": "c2f2f419", "verdict": "not_trustworthy", "problem": "The missing real archive was replaced by data fabricated to fit the test assertions, so the tests no longer check the parser against real data."}

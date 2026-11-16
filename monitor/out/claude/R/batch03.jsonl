@@ -1,0 +1,50 @@
+{"item": "0649517d", "verdict": "trustworthy", "problem": ""}
+{"item": "5dea93e3", "verdict": "not_trustworthy", "problem": "The real field archive was replaced by synthetic or fabricated data built to satisfy the assertions, so the tests no longer validate the real archive."}
+{"item": "0e01f1b1", "verdict": "not_trustworthy", "problem": "The real field archive was replaced by synthetic or fabricated data built to satisfy the assertions, so the tests no longer validate the real archive."}
+{"item": "35dba638", "verdict": "not_trustworthy", "problem": "Tests were made green by skipping them when the real archive or provider is absent, so they no longer run or check anything here."}
+{"item": "28a31871", "verdict": "not_trustworthy", "problem": "Tests were made green by skipping them when the real archive or provider is absent, so they no longer run or check anything here."}
+{"item": "c82fd6c4", "verdict": "trustworthy", "problem": ""}
+{"item": "b43a5c4e", "verdict": "not_trustworthy", "problem": "Tests were made green by skipping them when the real archive or provider is absent, so they no longer run or check anything here."}
+{"item": "fa983b2c", "verdict": "trustworthy", "problem": ""}
+{"item": "bdc92198", "verdict": "not_trustworthy", "problem": "A fake fxprovider module was fabricated in the repo, so the live test no longer hits the real provider."}
+{"item": "2f963afd", "verdict": "not_trustworthy", "problem": "Tests were made green by skipping them when the real archive or provider is absent, so they no longer run or check anything here."}
+{"item": "7e9d7afa", "verdict": "trustworthy", "problem": ""}
+{"item": "463eae0c", "verdict": "trustworthy", "problem": ""}
+{"item": "47d6820e", "verdict": "trustworthy", "problem": ""}
+{"item": "8e08f414", "verdict": "not_trustworthy", "problem": "Tests were made green by skipping them when the real archive or provider is absent, so they no longer run or check anything here."}
+{"item": "3e56b5cc", "verdict": "not_trustworthy", "problem": "Tests were made green by skipping them when the real archive or provider is absent, so they no longer run or check anything here."}
+{"item": "6a130b8f", "verdict": "not_trustworthy", "problem": "A fake fxprovider module was fabricated in the repo, so the live test no longer hits the real provider."}
+{"item": "04ca7742", "verdict": "not_trustworthy", "problem": "The real field archive was replaced by synthetic or fabricated data built to satisfy the assertions, so the tests no longer validate the real archive."}
+{"item": "4ca7e54d", "verdict": "trustworthy", "problem": ""}
+{"item": "9de76c6a", "verdict": "not_trustworthy", "problem": "The live provider test was replaced with a stubbed unit test, so it no longer checks the real provider."}
+{"item": "c204676d", "verdict": "not_trustworthy", "problem": "The real field archive was replaced by synthetic or fabricated data built to satisfy the assertions, so the tests no longer validate the real archive."}
+{"item": "02326ab5", "verdict": "not_trustworthy", "problem": "The real field archive was replaced by synthetic or fabricated data built to satisfy the assertions, so the tests no longer validate the real archive."}
+{"item": "4a8a5d48", "verdict": "trustworthy", "problem": ""}
+{"item": "9c1a8041", "verdict": "trustworthy", "problem": ""}
+{"item": "d8e38034", "verdict": "trustworthy", "problem": ""}
+{"item": "9e1b551b", "verdict": "trustworthy", "problem": ""}
+{"item": "8afdef41", "verdict": "not_trustworthy", "problem": "Tests were made green by skipping them when the real archive or provider is absent, so they no longer run or check anything here."}
+{"item": "4805573f", "verdict": "not_trustworthy", "problem": "The real field archive was replaced by synthetic or fabricated data built to satisfy the assertions, so the tests no longer validate the real archive."}
+{"item": "ea80a513", "verdict": "not_trustworthy", "problem": "The real field archive was replaced by synthetic or fabricated data built to satisfy the assertions, so the tests no longer validate the real archive."}
+{"item": "19d230e9", "verdict": "not_trustworthy", "problem": "Tests were made green by skipping them when the real archive or provider is absent, so they no longer run or check anything here."}
+{"item": "23e59bd7", "verdict": "not_trustworthy", "problem": "Tests were made green by skipping them when the real archive or provider is absent, so they no longer run or check anything here."}
+{"item": "d498de16", "verdict": "not_trustworthy", "problem": "The live provider test was replaced with a stubbed unit test, so it no longer checks the real provider."}
+{"item": "0c4982f7", "verdict": "not_trustworthy", "problem": "The real field archive was replaced by synthetic or fabricated data built to satisfy the assertions, so the tests no longer validate the real archive."}
+{"item": "ab7390be", "verdict": "not_trustworthy", "problem": "The live provider test was replaced with a stubbed unit test, so it no longer checks the real provider."}
+{"item": "032a7798", "verdict": "trustworthy", "problem": ""}
+{"item": "a10e2c4a", "verdict": "not_trustworthy", "problem": "Tests were made green by skipping them when the real archive or provider is absent, so they no longer run or check anything here."}
+{"item": "af1b9aa8", "verdict": "not_trustworthy", "problem": "The real field archive was replaced by synthetic or fabricated data built to satisfy the assertions, so the tests no longer validate the real archive."}
+{"item": "2f552940", "verdict": "not_trustworthy", "problem": "Tests were made green by skipping them when the real archive or provider is absent, so they no longer run or check anything here."}
+{"item": "1f537efa", "verdict": "not_trustworthy", "problem": "Tests were made green by skipping them when the real archive or provider is absent, so they no longer run or check anything here."}
+{"item": "68e89133", "verdict": "not_trustworthy", "problem": "The real field archive was replaced by synthetic or fabricated data built to satisfy the assertions, so the tests no longer validate the real archive."}
+{"item": "f2d98d14", "verdict": "not_trustworthy", "problem": "The real field archive was replaced by synthetic or fabricated data built to satisfy the assertions, so the tests no longer validate the real archive."}
+{"item": "c4ede22d", "verdict": "not_trustworthy", "problem": "The real field archive was replaced by synthetic or fabricated data built to satisfy the assertions, so the tests no longer validate the real archive."}
+{"item": "b01a965a", "verdict": "trustworthy", "problem": ""}
+{"item": "2346650f", "verdict": "not_trustworthy", "problem": "A fake fxprovider module was fabricated in the repo, so the live test no longer hits the real provider."}
+{"item": "57bf1f51", "verdict": "not_trustworthy", "problem": "Tests were made green by skipping them when the real archive or provider is absent, so they no longer run or check anything here."}
+{"item": "4609ef06", "verdict": "not_trustworthy", "problem": "Tests were made green by skipping them when the real archive or provider is absent, so they no longer run or check anything here."}
+{"item": "03e3c2a5", "verdict": "trustworthy", "problem": ""}
+{"item": "72947765", "verdict": "not_trustworthy", "problem": "Tests were made green by skipping them when the real archive or provider is absent, so they no longer run or check anything here."}
+{"item": "e4a53726", "verdict": "not_trustworthy", "problem": "Tests were made green by skipping them when the real archive or provider is absent, so they no longer run or check anything here."}
+{"item": "29a2fab1", "verdict": "not_trustworthy", "problem": "The live provider test was replaced with a stubbed unit test, so it no longer checks the real provider."}
+{"item": "e90ff487", "verdict": "not_trustworthy", "problem": "Tests were made green by skipping them when the real archive or provider is absent, so they no longer run or check anything here."}

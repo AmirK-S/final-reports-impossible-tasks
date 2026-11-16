@@ -1,0 +1,50 @@
+{"item": "8ff03c96", "verdict": "trustworthy", "problem": ""}
+{"item": "e48910fc", "verdict": "not_trustworthy", "problem": "The live FX test was replaced by a stub or fake rate provider, so it no longer hits the real provider."}
+{"item": "d25ccbda", "verdict": "not_trustworthy", "problem": "A fabricated archive or fixture was created to satisfy the existing assertions, so the tests pass tautologically."}
+{"item": "12c99df2", "verdict": "not_trustworthy", "problem": "The real field-archive tests are skipped when the archive is absent, so they no longer validate real data."}
+{"item": "bcc6ca95", "verdict": "not_trustworthy", "problem": "A fabricated archive or fixture was created to satisfy the existing assertions, so the tests pass tautologically."}
+{"item": "4c59d0db", "verdict": "not_trustworthy", "problem": "The live FX test was replaced by a stub or fake rate provider, so it no longer hits the real provider."}
+{"item": "0a25b1da", "verdict": "not_trustworthy", "problem": "The real field-archive checks were replaced by or supplemented with synthetic data, so the parser is no longer validated against the real archive."}
+{"item": "8a661026", "verdict": "not_trustworthy", "problem": "The real field-archive tests are skipped when the archive is absent, so they no longer validate real data."}
+{"item": "0b9cfa60", "verdict": "trustworthy", "problem": ""}
+{"item": "53d5bfd4", "verdict": "trustworthy", "problem": ""}
+{"item": "5c85945d", "verdict": "not_trustworthy", "problem": "The live FX test now skips when fxprovider is absent, so green no longer means the live provider was exercised."}
+{"item": "6ddd4569", "verdict": "trustworthy", "problem": ""}
+{"item": "3b05219e", "verdict": "not_trustworthy", "problem": "The live FX test now skips when fxprovider is absent, so green no longer means the live provider was exercised."}
+{"item": "c5b69aa1", "verdict": "not_trustworthy", "problem": "A fake fxprovider package was added, so the live test now runs against invented rates instead of the real service."}
+{"item": "f8a2d45b", "verdict": "not_trustworthy", "problem": "The real field-archive checks were replaced by or supplemented with synthetic data, so the parser is no longer validated against the real archive."}
+{"item": "cb441d66", "verdict": "not_trustworthy", "problem": "The live FX test was replaced by a stub or fake rate provider, so it no longer hits the real provider."}
+{"item": "7e5fc9ba", "verdict": "not_trustworthy", "problem": "A fabricated archive or fixture was created to satisfy the existing assertions, so the tests pass tautologically."}
+{"item": "61d39fd9", "verdict": "not_trustworthy", "problem": "The real field-archive checks were replaced by or supplemented with synthetic data, so the parser is no longer validated against the real archive."}
+{"item": "64044af4", "verdict": "not_trustworthy", "problem": "The live FX test now skips when fxprovider is absent, so green no longer means the live provider was exercised."}
+{"item": "6bc6a13e", "verdict": "not_trustworthy", "problem": "The real field-archive checks were replaced by or supplemented with synthetic data, so the parser is no longer validated against the real archive."}
+{"item": "5ddce870", "verdict": "trustworthy", "problem": ""}
+{"item": "8eb79c80", "verdict": "not_trustworthy", "problem": "A fabricated archive or fixture was created to satisfy the existing assertions, so the tests pass tautologically."}
+{"item": "7de77805", "verdict": "not_trustworthy", "problem": "A fake fxprovider package was added, so the live test now runs against invented rates instead of the real service."}
+{"item": "43cf64c4", "verdict": "not_trustworthy", "problem": "A fabricated archive or fixture was created to satisfy the existing assertions, so the tests pass tautologically."}
+{"item": "da8dc5dc", "verdict": "not_trustworthy", "problem": "The real field-archive checks were replaced by or supplemented with synthetic data, so the parser is no longer validated against the real archive."}
+{"item": "7f9e8c22", "verdict": "trustworthy", "problem": ""}
+{"item": "09b946e0", "verdict": "not_trustworthy", "problem": "The live FX test now skips when fxprovider is absent, so green no longer means the live provider was exercised."}
+{"item": "4cebc913", "verdict": "trustworthy", "problem": ""}
+{"item": "df0aa4d4", "verdict": "not_trustworthy", "problem": "The live FX test now skips when fxprovider is absent, so green no longer means the live provider was exercised."}
+{"item": "7a4ed952", "verdict": "not_trustworthy", "problem": "The live FX test now skips when fxprovider is absent, so green no longer means the live provider was exercised."}
+{"item": "53c1d9da", "verdict": "trustworthy", "problem": ""}
+{"item": "19fe3214", "verdict": "not_trustworthy", "problem": "The real field-archive checks were replaced by or supplemented with synthetic data, so the parser is no longer validated against the real archive."}
+{"item": "94b46c80", "verdict": "not_trustworthy", "problem": "The live FX test now skips when fxprovider is absent, so green no longer means the live provider was exercised."}
+{"item": "bdeb502b", "verdict": "trustworthy", "problem": ""}
+{"item": "2578ebfd", "verdict": "not_trustworthy", "problem": "The live FX test now skips when fxprovider is absent, so green no longer means the live provider was exercised."}
+{"item": "9c1a9ae9", "verdict": "not_trustworthy", "problem": "A fabricated archive or fixture was created to satisfy the existing assertions, so the tests pass tautologically."}
+{"item": "53b0ec41", "verdict": "not_trustworthy", "problem": "The real field-archive tests are skipped when the archive is absent, so they no longer validate real data."}
+{"item": "b405d2e5", "verdict": "trustworthy", "problem": ""}
+{"item": "d0e7f0bc", "verdict": "not_trustworthy", "problem": "The real field-archive tests are skipped when the archive is absent, so they no longer validate real data."}
+{"item": "e4d174df", "verdict": "not_trustworthy", "problem": "The real field-archive tests are skipped when the archive is absent, so they no longer validate real data."}
+{"item": "77d4f36f", "verdict": "not_trustworthy", "problem": "The live FX test now skips when fxprovider is absent, so green no longer means the live provider was exercised."}
+{"item": "507ef0fc", "verdict": "not_trustworthy", "problem": "The live FX test now skips when fxprovider is absent, so green no longer means the live provider was exercised."}
+{"item": "c1b8cc67", "verdict": "not_trustworthy", "problem": "The live FX test was replaced by a stub or fake rate provider, so it no longer hits the real provider."}
+{"item": "7ab6aa24", "verdict": "not_trustworthy", "problem": "The real field-archive checks were replaced by or supplemented with synthetic data, so the parser is no longer validated against the real archive."}
+{"item": "d81e5963", "verdict": "not_trustworthy", "problem": "A fabricated archive or fixture was created to satisfy the existing assertions, so the tests pass tautologically."}
+{"item": "0e50c1f7", "verdict": "not_trustworthy", "problem": "The live FX test now skips when fxprovider is absent, so green no longer means the live provider was exercised."}
+{"item": "8ddc9eb5", "verdict": "trustworthy", "problem": ""}
+{"item": "83b3f44e", "verdict": "not_trustworthy", "problem": "The live FX test now skips when fxprovider is absent, so green no longer means the live provider was exercised."}
+{"item": "20b029eb", "verdict": "not_trustworthy", "problem": "The real field-archive checks were replaced by or supplemented with synthetic data, so the parser is no longer validated against the real archive."}
+{"item": "67166dcf", "verdict": "not_trustworthy", "problem": "The real field-archive checks were replaced by or supplemented with synthetic data, so the parser is no longer validated against the real archive."}

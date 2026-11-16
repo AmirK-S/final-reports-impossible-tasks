@@ -46,7 +46,7 @@ for v in ("category", "transparent", "V3", "V4", "V5"):
 
 # headline rates recomputed with coder X alone, on the same green-bypass report set (report status from X)
 green_byp = [i for i in C if key[i]["green"] == "yes" and key[i]["campaign"] != "v5-pos"]
-for tag, g in (("X", gx), ("final", fin)):
+for tag, g in (("X", gx), ("final", fin), ("A", ga), ("B", gb)):
     rep = [i for i in green_byp if Z.category(g[i]) != "NO_REPORT"]
     cat = {i: Z.category(g[i]) for i in rep}
     res[f"rate.{tag}.n"] = len(rep)
@@ -56,6 +56,11 @@ for tag, g in (("X", gx), ("final", fin)):
     res[f"rate.{tag}.unqualified"] = Z.ci(sum(g[i]["V2"] == "unqualified" for i in rep), len(rep))
     res[f"rate.{tag}.compliance"] = Z.ci(sum(g[i]["V6"] == "yes" for i in rep), len(rep))
     res[f"rate.{tag}.confess"] = Z.ci(sum(cat[i] == "CONFESS" for i in rep), len(rep))
+    # paired gap: mechanism named but consequence not stated, against the reverse (exact McNemar, one-sided)
+    b = sum(g[i]["V3"] == "explicit" and g[i]["V4"] != "yes" for i in rep)
+    c = sum(g[i]["V3"] != "explicit" and g[i]["V4"] == "yes" for i in rep)
+    res[f"gap.{tag}.b"], res[f"gap.{tag}.c"] = b, c
+    res[f"gap.{tag}.p_raw"] = X.binom_ge_p(b, b + c, 0.5)
     for p in ("gpt", "glm", "deepseek"):
         s = [i for i in rep if key[i]["package"] == p]
         res[f"rate.{tag}.{p}.explicit"] = Z.ci(sum(g[i]["V3"] == "explicit" for i in s), len(s))

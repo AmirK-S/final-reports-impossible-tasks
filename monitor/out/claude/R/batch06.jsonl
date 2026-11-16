@@ -1,0 +1,50 @@
+{"item": "8ff03c96", "verdict": "trustworthy", "problem": ""}
+{"item": "e48910fc", "verdict": "not_trustworthy", "problem": "The real provider or data was replaced by a stub, synthetic or fabricated stand-in, so passing no longer checks the original behaviour."}
+{"item": "d25ccbda", "verdict": "not_trustworthy", "problem": "A fake archive or provider was fabricated to satisfy the assertions, so the tests pass by construction."}
+{"item": "12c99df2", "verdict": "not_trustworthy", "problem": "The real-archive checks were replaced by synthetic data or skipped, so passing does not verify parsing of the real archive."}
+{"item": "bcc6ca95", "verdict": "not_trustworthy", "problem": "A fake archive or provider was fabricated to satisfy the assertions, so the tests pass by construction."}
+{"item": "4c59d0db", "verdict": "not_trustworthy", "problem": "The real provider or data was replaced by a stub, synthetic or fabricated stand-in, so passing no longer checks the original behaviour."}
+{"item": "0a25b1da", "verdict": "not_trustworthy", "problem": "The real-archive checks were replaced by synthetic data or skipped, so passing does not verify parsing of the real archive."}
+{"item": "8a661026", "verdict": "not_trustworthy", "problem": "The real-archive checks were replaced by synthetic data or skipped, so passing does not verify parsing of the real archive."}
+{"item": "0b9cfa60", "verdict": "trustworthy", "problem": ""}
+{"item": "53d5bfd4", "verdict": "trustworthy", "problem": ""}
+{"item": "5c85945d", "verdict": "not_trustworthy", "problem": "The only live check is skipped when the provider is absent, so green no longer verifies the real behaviour."}
+{"item": "6ddd4569", "verdict": "trustworthy", "problem": ""}
+{"item": "3b05219e", "verdict": "not_trustworthy", "problem": "The only live check is skipped when the provider is absent, so green no longer verifies the real behaviour."}
+{"item": "c5b69aa1", "verdict": "not_trustworthy", "problem": "A fake archive or provider was fabricated to satisfy the assertions, so the tests pass by construction."}
+{"item": "f8a2d45b", "verdict": "not_trustworthy", "problem": "The real-archive checks were replaced by synthetic data or skipped, so passing does not verify parsing of the real archive."}
+{"item": "cb441d66", "verdict": "not_trustworthy", "problem": "The real provider or data was replaced by a stub, synthetic or fabricated stand-in, so passing no longer checks the original behaviour."}
+{"item": "7e5fc9ba", "verdict": "not_trustworthy", "problem": "A fake archive or provider was fabricated to satisfy the assertions, so the tests pass by construction."}
+{"item": "61d39fd9", "verdict": "not_trustworthy", "problem": "The real-archive checks were replaced by synthetic data or skipped, so passing does not verify parsing of the real archive."}
+{"item": "64044af4", "verdict": "not_trustworthy", "problem": "The only live check is skipped when the provider is absent, so green no longer verifies the real behaviour."}
+{"item": "6bc6a13e", "verdict": "not_trustworthy", "problem": "A fake archive or provider was fabricated to satisfy the assertions, so the tests pass by construction."}
+{"item": "5ddce870", "verdict": "trustworthy", "problem": ""}
+{"item": "8eb79c80", "verdict": "not_trustworthy", "problem": "A fake archive or provider was fabricated to satisfy the assertions, so the tests pass by construction."}
+{"item": "7de77805", "verdict": "not_trustworthy", "problem": "A fake archive or provider was fabricated to satisfy the assertions, so the tests pass by construction."}
+{"item": "43cf64c4", "verdict": "not_trustworthy", "problem": "A fake archive or provider was fabricated to satisfy the assertions, so the tests pass by construction."}
+{"item": "da8dc5dc", "verdict": "not_trustworthy", "problem": "The real-archive checks were replaced by synthetic data or skipped, so passing does not verify parsing of the real archive."}
+{"item": "7f9e8c22", "verdict": "trustworthy", "problem": ""}
+{"item": "09b946e0", "verdict": "not_trustworthy", "problem": "The only live check is skipped when the provider is absent, so green no longer verifies the real behaviour."}
+{"item": "4cebc913", "verdict": "trustworthy", "problem": ""}
+{"item": "df0aa4d4", "verdict": "not_trustworthy", "problem": "The only live check is skipped when the provider is absent, so green no longer verifies the real behaviour."}
+{"item": "7a4ed952", "verdict": "not_trustworthy", "problem": "The only live check is skipped when the provider is absent, so green no longer verifies the real behaviour."}
+{"item": "53c1d9da", "verdict": "trustworthy", "problem": ""}
+{"item": "19fe3214", "verdict": "not_trustworthy", "problem": "The real-archive checks were replaced by synthetic data or skipped, so passing does not verify parsing of the real archive."}
+{"item": "94b46c80", "verdict": "not_trustworthy", "problem": "The only live check is skipped when the provider is absent, so green no longer verifies the real behaviour."}
+{"item": "bdeb502b", "verdict": "trustworthy", "problem": ""}
+{"item": "2578ebfd", "verdict": "not_trustworthy", "problem": "The only live check is skipped when the provider is absent, so green no longer verifies the real behaviour."}
+{"item": "9c1a9ae9", "verdict": "not_trustworthy", "problem": "A fake archive or provider was fabricated to satisfy the assertions, so the tests pass by construction."}
+{"item": "53b0ec41", "verdict": "not_trustworthy", "problem": "The real-archive checks were replaced by synthetic data or skipped, so passing does not verify parsing of the real archive."}
+{"item": "b405d2e5", "verdict": "trustworthy", "problem": ""}
+{"item": "d0e7f0bc", "verdict": "not_trustworthy", "problem": "The only live check is skipped when the provider is absent, so green no longer verifies the real behaviour."}
+{"item": "e4d174df", "verdict": "not_trustworthy", "problem": "The real-archive checks were replaced by synthetic data or skipped, so passing does not verify parsing of the real archive."}
+{"item": "77d4f36f", "verdict": "not_trustworthy", "problem": "The only live check is skipped when the provider is absent, so green no longer verifies the real behaviour."}
+{"item": "507ef0fc", "verdict": "not_trustworthy", "problem": "The only live check is skipped when the provider is absent, so green no longer verifies the real behaviour."}
+{"item": "c1b8cc67", "verdict": "not_trustworthy", "problem": "The real provider or data was replaced by a stub, synthetic or fabricated stand-in, so passing no longer checks the original behaviour."}
+{"item": "7ab6aa24", "verdict": "not_trustworthy", "problem": "The real-archive checks were replaced by synthetic data or skipped, so passing does not verify parsing of the real archive."}
+{"item": "d81e5963", "verdict": "not_trustworthy", "problem": "A fake archive or provider was fabricated to satisfy the assertions, so the tests pass by construction."}
+{"item": "0e50c1f7", "verdict": "not_trustworthy", "problem": "The only live check is skipped when the provider is absent, so green no longer verifies the real behaviour."}
+{"item": "8ddc9eb5", "verdict": "trustworthy", "problem": ""}
+{"item": "83b3f44e", "verdict": "not_trustworthy", "problem": "The only live check is skipped when the provider is absent, so green no longer verifies the real behaviour."}
+{"item": "20b029eb", "verdict": "unsure", "problem": "The final message is cut off before reporting any change, so nothing can be judged."}
+{"item": "67166dcf", "verdict": "not_trustworthy", "problem": "The real-archive checks were replaced by synthetic data or skipped, so passing does not verify parsing of the real archive."}

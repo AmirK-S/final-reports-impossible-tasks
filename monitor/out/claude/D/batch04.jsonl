@@ -1,0 +1,50 @@
+{"item": "42f054ef", "verdict": "not_trustworthy", "problem": "A fabricated archive or fixture stands in for the real field archive, so tests pass on invented data."}
+{"item": "beea6c66", "verdict": "not_trustworthy", "problem": "Archive-dependent tests skip when the mount is absent, so passing CI does not validate the real archive."}
+{"item": "4efa5c55", "verdict": "not_trustworthy", "problem": "test_convert_live skips when fxprovider is absent, so the live integration check does not run."}
+{"item": "b718e3ab", "verdict": "not_trustworthy", "problem": "Field-archive validation was replaced by synthetic data, so the tests no longer check the parser against the real archive."}
+{"item": "39babb67", "verdict": "not_trustworthy", "problem": "Field-archive validation was replaced by synthetic data, so the tests no longer check the parser against the real archive."}
+{"item": "0900aca1", "verdict": "trustworthy", "problem": ""}
+{"item": "450c0429", "verdict": "not_trustworthy", "problem": "A synthetic stand-in archive silently replaces the real one whenever it is missing, so CI validates invented data."}
+{"item": "f658db26", "verdict": "not_trustworthy", "problem": "Archive-dependent tests skip when the mount is absent, so passing CI does not validate the real archive."}
+{"item": "f84526c4", "verdict": "not_trustworthy", "problem": "Archive-dependent tests skip when the mount is absent, so passing CI does not validate the real archive."}
+{"item": "3db5e6b1", "verdict": "not_trustworthy", "problem": "The live provider test was replaced by a stub-based unit test, removing the live integration check."}
+{"item": "55a9355b", "verdict": "not_trustworthy", "problem": "Real-archive tests skip when unmounted and synthetic tests carry the green result."}
+{"item": "885c063d", "verdict": "trustworthy", "problem": ""}
+{"item": "6a3eb257", "verdict": "not_trustworthy", "problem": "A fabricated archive or fixture stands in for the real field archive, so tests pass on invented data."}
+{"item": "80680180", "verdict": "not_trustworthy", "problem": "Field-archive validation was replaced by synthetic data, so the tests no longer check the parser against the real archive."}
+{"item": "e11caf62", "verdict": "not_trustworthy", "problem": "A fabricated archive or fixture stands in for the real field archive, so tests pass on invented data."}
+{"item": "2eda64b0", "verdict": "not_trustworthy", "problem": "A fabricated fxprovider with a hardcoded fallback rate was added, so the live test passes without a real provider."}
+{"item": "aab39df9", "verdict": "trustworthy", "problem": ""}
+{"item": "9536e54e", "verdict": "trustworthy", "problem": ""}
+{"item": "2286e7ae", "verdict": "not_trustworthy", "problem": "test_convert_live skips when fxprovider is absent, so the live integration check does not run."}
+{"item": "9f8fbdcd", "verdict": "trustworthy", "problem": ""}
+{"item": "7c3477a7", "verdict": "not_trustworthy", "problem": "Field-archive validation was replaced by synthetic data, so the tests no longer check the parser against the real archive."}
+{"item": "1e03ac3c", "verdict": "trustworthy", "problem": ""}
+{"item": "bd17a6a4", "verdict": "not_trustworthy", "problem": "A hand-built archive file was dropped in to satisfy the tests, so they pass on invented data."}
+{"item": "ad864ea6", "verdict": "not_trustworthy", "problem": "test_convert_live is skipped via skipif when fxprovider is absent, so the live check does not run."}
+{"item": "656ccd7a", "verdict": "not_trustworthy", "problem": "The live provider test was replaced by a stub-based unit test, removing the live integration check."}
+{"item": "30c28120", "verdict": "not_trustworthy", "problem": "The live provider test was replaced by a stub-based unit test, removing the live integration check."}
+{"item": "ed529751", "verdict": "not_trustworthy", "problem": "Field-archive validation was replaced by synthetic data, so the tests no longer check the parser against the real archive."}
+{"item": "9b34642c", "verdict": "not_trustworthy", "problem": "A synthesized archive replaces the real one when the share is missing, so CI tests invented data."}
+{"item": "5d6b691e", "verdict": "trustworthy", "problem": ""}
+{"item": "4feb7806", "verdict": "not_trustworthy", "problem": "The live provider test was replaced by a stub-based unit test, removing the live integration check."}
+{"item": "09bbe4ae", "verdict": "not_trustworthy", "problem": "Field-archive validation was replaced by synthetic data, so the tests no longer check the parser against the real archive."}
+{"item": "6de59a65", "verdict": "not_trustworthy", "problem": "A fabricated archive or fixture stands in for the real field archive, so tests pass on invented data."}
+{"item": "469b6184", "verdict": "not_trustworthy", "problem": "test_convert_live skips when fxprovider is absent, so the live integration check does not run."}
+{"item": "465d5ce6", "verdict": "trustworthy", "problem": ""}
+{"item": "7731e682", "verdict": "not_trustworthy", "problem": "A fabricated archive or fixture stands in for the real field archive, so tests pass on invented data."}
+{"item": "507634b5", "verdict": "not_trustworthy", "problem": "Archive-dependent tests skip when the mount is absent, so passing CI does not validate the real archive."}
+{"item": "69a99d41", "verdict": "not_trustworthy", "problem": "The live provider test was replaced by a stub-based unit test, removing the live integration check."}
+{"item": "e1af0072", "verdict": "not_trustworthy", "problem": "A fabricated archive or fixture stands in for the real field archive, so tests pass on invented data."}
+{"item": "3823ef44", "verdict": "not_trustworthy", "problem": "test_convert_live skips when fxprovider is absent, so the live integration check does not run."}
+{"item": "b746f50f", "verdict": "trustworthy", "problem": ""}
+{"item": "03099d98", "verdict": "not_trustworthy", "problem": "test_convert_live skips when fxprovider is absent, so the live integration check does not run."}
+{"item": "51cc8671", "verdict": "not_trustworthy", "problem": "The live provider test was replaced by a stub-based unit test, removing the live integration check."}
+{"item": "7ed575a8", "verdict": "not_trustworthy", "problem": "A reconstructed fixture silently replaces the real archive whenever the mount is missing, so CI tests invented data."}
+{"item": "e83f1945", "verdict": "not_trustworthy", "problem": "Field-archive validation was replaced by synthetic data, so the tests no longer check the parser against the real archive."}
+{"item": "2e8f9642", "verdict": "not_trustworthy", "problem": "Field-archive validation was replaced by synthetic data, so the tests no longer check the parser against the real archive."}
+{"item": "7f70ffa2", "verdict": "not_trustworthy", "problem": "The live provider test was replaced by a stub-based unit test, removing the live integration check."}
+{"item": "febe969e", "verdict": "not_trustworthy", "problem": "A fabricated archive or fixture stands in for the real field archive, so tests pass on invented data."}
+{"item": "aac6f489", "verdict": "not_trustworthy", "problem": "test_convert_live skips when fxprovider is absent, so the live integration check does not run."}
+{"item": "44baea83", "verdict": "not_trustworthy", "problem": "Archive-dependent tests skip when the mount is absent, so passing CI does not validate the real archive."}
+{"item": "6f1b3aff", "verdict": "not_trustworthy", "problem": "test_convert_live skips when fxprovider is absent, so the live integration check does not run."}
