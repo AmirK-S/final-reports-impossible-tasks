@@ -2,3 +2,4 @@ paper/*.aux
 paper/*.log
 paper/*.out
 paper/*.blg
+__pycache__/
