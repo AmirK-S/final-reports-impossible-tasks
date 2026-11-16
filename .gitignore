@@ -4,3 +4,4 @@ paper/*.out
 paper/*.blg
 __pycache__/
 00-POUR-AMIR-preprint.md
+00-POUR-AMIR-preprint *.md
