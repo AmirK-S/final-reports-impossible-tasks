@@ -37,6 +37,9 @@ def walk(prefix, v):
 
 walk("", json.load(open(f"{ROOT}/analysis/results.json")))
 walk("agr", json.load(open(f"{ROOT}/analysis/agreement.json")))
+for pre, fn in (("cx", "crossfamily.json"), ("mon", "monitor.json")):
+    if os.path.exists(f"{ROOT}/analysis/{fn}"):
+        walk(pre, json.load(open(f"{ROOT}/analysis/{fn}")))
 # factorial cells from the original study's derived tables (checked against raw folders by verify/recount_raw.py)
 import csv
 W = os.path.expanduser("~/work/swarm-alignment-data")
