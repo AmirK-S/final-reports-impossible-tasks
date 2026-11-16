@@ -1,0 +1,93 @@
+\begin{thebibliography}{13}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Advani(2026)]{advani2026falsesuccess}
+Laksh Advani.
+\newblock From confident closing to silent failure: Characterizing false
+  success in {LLM} agents.
+\newblock \emph{arXiv preprint arXiv:2606.09863}, 2026.
+
+\bibitem[Gabor et~al.(2025)Gabor, Lynch, and Rosenfeld]{gabor2025evilgenie}
+Jonathan Gabor, Jayson Lynch, and Jonathan Rosenfeld.
+\newblock {EvilGenie}: A reward hacking benchmark.
+\newblock \emph{arXiv preprint arXiv:2511.21654}, 2025.
+
+\bibitem[Gomez(2026)]{gomez2026escalation}
+Francesca Gomez.
+\newblock Can escalation channels redirect reward hacking toward defect
+  disclosure?
+\newblock \emph{arXiv preprint arXiv:2608.29460}, 2026.
+
+\bibitem[Guo et~al.(2025)Guo, Liu, Liu, et~al.]{guo2025upward}
+Dadi Guo, Qingyu Liu, Dongrui Liu, et~al.
+\newblock Are your agents upward deceivers?
+\newblock \emph{arXiv preprint arXiv:2512.04864}, 2025.
+
+\bibitem[Hu et~al.(2026)Hu, Ghahremani, Aghajani, Pasupuleti, and
+  Bhattacharjee]{hu2026transmissible}
+Yuepeng Hu, Pegah Ghahremani, Reza Aghajani, Mahesh Pasupuleti, and Himaghna
+  Bhattacharjee.
+\newblock Reward hacking as a transmissible strategy in multi-agent coding
+  systems.
+\newblock \emph{arXiv preprint arXiv:2610.12822}, 2026.
+
+\bibitem[Joglekar et~al.(2025)Joglekar, Chen, Wu, Yosinski, Wang, Barak, and
+  Glaese]{joglekar2025confessions}
+Manas Joglekar, Jeremy Chen, Gabriel Wu, Jason Yosinski, Jasmine Wang, Boaz
+  Barak, and Amelia Glaese.
+\newblock Training {LLMs} for honesty via confessions.
+\newblock \emph{arXiv preprint arXiv:2512.08093}, 2025.
+
+\bibitem[Kellou-Sidhoum(2026)]{kellou2026refusal}
+Amir Kellou-Sidhoum.
+\newblock Refusal notes, explicit rules and impossible tasks: Constraint
+  compliance of four coding-agent packages, 2026.
+\newblock Swarm Alignment Hackathon report (Apart Research), November 2026.
+  Code: \url{https://github.com/AmirK-S/refusal-notes-impossible-tasks}.
+
+\bibitem[Lee et~al.(2026)Lee, Hwang, Han, and Yun]{lee2026unfinished}
+Seunghyun Lee, Jaehui Hwang, Dongyoon Han, and Sangdoo Yun.
+\newblock {Unfinished-Bench}: Measuring rule violations by persistent agents in
+  realistic work environments.
+\newblock \emph{arXiv preprint arXiv:2611.17460}, 2026.
+
+\bibitem[MacDiarmid et~al.(2025)MacDiarmid, Wright, Uesato,
+  et~al.]{macdiarmid2025emergent}
+Monte MacDiarmid, Benjamin Wright, Jonathan Uesato, et~al.
+\newblock Natural emergent misalignment from reward hacking in production {RL}.
+\newblock \emph{arXiv preprint arXiv:2511.18397}, 2025.
+
+\bibitem[Paglieri et~al.(2026)Paglieri, Cross, Genewein, Leibo, Tomasev, and
+  Vezhnevets]{paglieri2026swarms}
+Davide Paglieri, Logan Cross, Tim Genewein, Joel~Z. Leibo, Nenad Tomasev, and
+  Alexander~Sasha Vezhnevets.
+\newblock A case study on emergent cheating and whistleblowing in autonomous
+  research swarms.
+\newblock \emph{arXiv preprint arXiv:2609.04170}, 2026.
+
+\bibitem[Smyth et~al.(2026)Smyth, Mantilla-Ramos, Notsawo, Helbling, Tosato,
+  Merzouk, Dziri, Gidel, and Tosato]{smyth2026overclaim}
+Nolan Smyth, Yorguin-Jose Mantilla-Ramos, Pascal Jr~Tikeng Notsawo, Saskia
+  Helbling, Alberto Tosato, Mohamed~Amine Merzouk, Nouha Dziri, Gauthier Gidel,
+  and Tommaso Tosato.
+\newblock Quantifying overclaiming propensity in frontier {LLM} agents.
+\newblock \emph{arXiv preprint arXiv:2609.20812}, 2026.
+
+\bibitem[Von~Arx et~al.(2025)Von~Arx, Chan, and Barnes]{vonarx2025reward}
+Sydney Von~Arx, Lawrence Chan, and Beth Barnes.
+\newblock Recent frontier models are reward hacking.
+\newblock METR blog, 5 June 2025,
+  \url{https://metr.org/blog/2025-06-05-recent-reward-hacking}, 2025.
+
+\bibitem[Zhong et~al.(2025)Zhong, Raghunathan, and
+  Carlini]{zhong2025impossiblebench}
+Ziqian Zhong, Aditi Raghunathan, and Nicholas Carlini.
+\newblock {ImpossibleBench}: Measuring {LLMs}' propensity of exploiting test
+  cases.
+\newblock \emph{arXiv preprint arXiv:2510.20270}, 2025.
+
+\end{thebibliography}

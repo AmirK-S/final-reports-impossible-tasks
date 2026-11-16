@@ -1,0 +1,187 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor={rgb:red,17;green,85;blue,204}]{hyperref}
+\usepackage{xurl}
+\setlist{nosep,leftmargin=1.5em}
+\setlength{\parskip}{2pt}
+
+\input{numbers.tex}
+\newcommand{\num}[1]{\ifcsname num@#1\endcsname\csname num@#1\endcsname\else\textcolor{red}{\textbf{??}}\fi}
+\newcommand{\kn}[1]{\num{#1.kn}}
+\newcommand{\pc}[1]{\num{#1.pct} \num{#1.ci}}
+
+\title{Green Tests, Uneven Reports: What Coding Agents Tell Their Users\\After Bypassing an Impossible Test}
+\author{Amir Kellou-Sidhoum\\ Independent researcher\\ \texttt{amirksmain@gmail.com}}
+\date{November 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+When a coding agent cannot make a test pass legitimately, it may make it pass anyway, and then write a report to the person who asked. We study both steps on two pytest tasks that cannot pass in the sandbox, with four model-and-harness packages and a deterministic checker that runs after the agent stops and out of its reach. First, from a pre-registered $2\times2$ factorial on the ticket, we separate an explicit prohibition from a one-sentence permission to report the blocker: bypassing fell from \kn{fact.frozen.pooled.P0R0} runs without either to \kn{fact.frozen.pooled.P1R0} with the prohibition alone, \kn{fact.frozen.pooled.P0R1} with the reporting sentence alone and \kn{fact.frozen.pooled.P1R1} with both (\kn{fact.ext.pooled.P1R1}, none green, in a later extended sample), with gaps that differ by package. Second, in a new pre-registered analysis that makes no new model call, two blind coders and a blind adjudicator coded the final message of every bypass run (\num{n.C} runs, \num{n.green_bypass} ending green) against the checker's ground truth. Most reports named what the agent had done (\pc{ph.all.explicit} of green bypasses), but only \pc{ph.all.consequence} said what the tests no longer checked; statements that the checker contradicts were rare (\pc{ph.all.misrep_factual}). Packages differed more than conditions: GPT-6.1 Sol named the shortcut in \kn{ph.gpt.explicit} runs, while DeepSeek V4 Flash left it unnamed in \kn{ph.deepseek.not_explicit} and described a substitute it had written as real in \kn{ph.deepseek.misrep_factual}. Two pre-registered hypotheses failed or proved fragile: the reporting sentence did not measurably change what bypassers reported, and the claim that full confession is a minority depended on one contested definition. A reader of the report alone would usually learn what was done, and often not what the green result is worth.
+\end{abstract}
+
+\section{Introduction}
+
+Coding agents increasingly work without a human watching each step, and the human's view of the work is often a single message at the end: what was wrong, what was changed, whether the tests pass. That message is also what another agent reads when work is delegated. If an agent takes a shortcut, the safety of the arrangement depends on two things: how often the shortcut happens, and whether the report says so.
+
+Most work measures the first. Impossible-task benchmarks make every passing run a shortcut \citep{zhong2025impossiblebench}; escalation channels and policies reduce how often agents hack defective tests \citep{gomez2026escalation}; reward hacking transfers between agents \citep{hu2026transmissible}. Work on the second asks whether final reports overclaim \citep{smyth2026overclaim,advani2026falsesuccess} or trains a separate confession channel \citep{joglekar2025confessions}. We connect the two on the same runs: for each bypass that a deterministic checker detected, we code what the agent's own report told the user about it.
+
+The runs come from a study made during a hackathon \citep{kellou2026refusal}, whose bench, checker, tickets and analysis are public. That study found that an explicit rule kept bypassing rare and that, without the rule, three of four packages bypassed most of the time. We add two things.
+
+\begin{enumerate}
+  \item \textbf{The two halves of a rule, separated} (pre-registered, reanalysed from the raw run folders). A prohibition and a one-sentence permission to report the blocker each lowered bypassing; together they left none at the freeze. Neither half sufficed for every package, and the zero is a small-sample zero (Section~\ref{sec:fact}).
+  \item \textbf{What agents say after bypassing} (pre-registered, new). A graded grid separates naming the mechanism, stating what is lost, and claims that the ground truth contradicts. Agreement between blind coders, sensitivity to each coder, and a model-free reference are reported (Sections~\ref{sec:coding} and~\ref{sec:results}).
+\end{enumerate}
+
+An independent adversarial audit, run before any claim was written, recomputed every number and read about 70 items; it found one of our pre-registered categories (a claim that the change respects a policy, counted as a misrepresentation) wrong in most of the cases it checked. We therefore report the pre-registered results, but rest the paper's claims on the two axes that survive that audit: whether the report names the shortcut and states its cost, and whether it says something the checker contradicts. Three pre-registered hypotheses are negative or fragile and we report them as such (Section~\ref{sec:results}).
+
+\input{related.tex}
+\input{methods.tex}
+
+\section{The prohibition and the permission to report, separated}\label{sec:fact}
+
+Table~\ref{tab:fact} gives bypass counts by stratum and cell, at the pre-registered freeze (10:30) and in an extended descriptive sample (12:25). We recounted every cell from the raw run folders with a script independent of the original analysis (\texttt{verify/recount\_raw.py}): the frozen cells match, with one run excluded for a provider error and one raw descriptor removed by the pre-registered allowlist.
+
+At the freeze, the prohibition alone lowered bypassing (mean per-stratum difference \num{orig.fact.HF1.effect_mean}, Holm $p$ \num{orig.fact.HF1.holm_p}) and so did the reporting sentence alone (\num{orig.fact.HF2.effect_mean}, Holm $p$ \num{orig.fact.HF2.holm_p}); with both, no run bypassed (\kn{fact.frozen.pooled.P1R1}, 95\,\% upper bound 12\,\%). Three cautions. First, the pooled effects hide strata where one half was not enough: the reporting sentence alone did not stop GPT on S7 (\num{fact.frozen.gpt.S7.P0R1}), and the prohibition alone did not stop DeepSeek on S6 (\num{fact.frozen.deepseek.S6.P1R0}). Second, the extended sample is not zero: \kn{fact.ext.pooled.P1R1} runs broke the full rule, both DeepSeek, both with tests still red. Third, \kn{fact.frozen.pooled.P1R1} is evidence about these three packages, two small tasks and one wording; it is not evidence that the combined rule protects in general.
+
+What the prohibition changes is not only how often agents bypass but how. Without it, almost every bypass ended green (\kn{H2.extended.cells.P0R0.green_bypass}); with it, \kn{H2.extended.cells.P1R0.bypass} runs still violated the rule but only \kn{H2.extended.cells.P1R0.green_bypass} ended green. Most of the remaining violations were DeepSeek runs on S6 that wrote their own \texttt{fxprovider} module with a hard-coded fallback rate, a stub the rule forbids (Section~\ref{sec:h3}).
+
+\begin{table}[t]
+\centering\small
+\caption{Bypass $k/n$ by stratum and ticket cell. P: prohibition sentence; R: reporting sentence. Frozen: pre-registered sample (tests); extended: all runs to 12:25 (descriptive). Pooled exact 95\,\% intervals.}\label{tab:fact}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{l cccc @{\hspace{10pt}} cccc}
+\toprule
+ & \multicolumn{4}{c}{Frozen (10:30)} & \multicolumn{4}{c}{Extended (12:25)} \\
+\cmidrule(lr){2-5}\cmidrule(lr){6-9}
+Stratum & P0R0 & P1R0 & P0R1 & P1R1 & P0R0 & P1R0 & P0R1 & P1R1 \\
+\midrule
+GPT, S7      & \num{fact.frozen.gpt.S7.P0R0} & \num{fact.frozen.gpt.S7.P1R0} & \num{fact.frozen.gpt.S7.P0R1} & \num{fact.frozen.gpt.S7.P1R1} & \num{fact.ext.gpt.S7.P0R0} & \num{fact.ext.gpt.S7.P1R0} & \num{fact.ext.gpt.S7.P0R1} & \num{fact.ext.gpt.S7.P1R1} \\
+GLM, S7      & \num{fact.frozen.glm.S7.P0R0} & \num{fact.frozen.glm.S7.P1R0} & \num{fact.frozen.glm.S7.P0R1} & \num{fact.frozen.glm.S7.P1R1} & \num{fact.ext.glm.S7.P0R0} & \num{fact.ext.glm.S7.P1R0} & \num{fact.ext.glm.S7.P0R1} & \num{fact.ext.glm.S7.P1R1} \\
+DeepSeek, S7 & \num{fact.frozen.deepseek.S7.P0R0} & \num{fact.frozen.deepseek.S7.P1R0} & \num{fact.frozen.deepseek.S7.P0R1} & \num{fact.frozen.deepseek.S7.P1R1} & \num{fact.ext.deepseek.S7.P0R0} & \num{fact.ext.deepseek.S7.P1R0} & \num{fact.ext.deepseek.S7.P0R1} & \num{fact.ext.deepseek.S7.P1R1} \\
+DeepSeek, S6 & \num{fact.frozen.deepseek.S6.P0R0} & \num{fact.frozen.deepseek.S6.P1R0} & \num{fact.frozen.deepseek.S6.P0R1} & \num{fact.frozen.deepseek.S6.P1R1} & \num{fact.ext.deepseek.S6.P0R0} & \num{fact.ext.deepseek.S6.P1R0} & \num{fact.ext.deepseek.S6.P0R1} & \num{fact.ext.deepseek.S6.P1R1} \\
+\midrule
+Pooled & \num{fact.frozen.pooled.P0R0.kn} & \num{fact.frozen.pooled.P1R0.kn} & \num{fact.frozen.pooled.P0R1.kn} & \num{fact.frozen.pooled.P1R1.kn} & \num{fact.ext.pooled.P0R0.kn} & \num{fact.ext.pooled.P1R0.kn} & \num{fact.ext.pooled.P0R1.kn} & \num{fact.ext.pooled.P1R1.kn} \\
+95\,\% CI & \num{fact.frozen.pooled.P0R0.ci} & \num{fact.frozen.pooled.P1R0.ci} & \num{fact.frozen.pooled.P0R1.ci} & \num{fact.frozen.pooled.P1R1.ci} & \num{fact.ext.pooled.P0R0.ci} & \num{fact.ext.pooled.P1R0.ci} & \num{fact.ext.pooled.P0R1.ci} & \num{fact.ext.pooled.P1R1.ci} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{What the reports say}\label{sec:results}
+
+\paragraph{Agreement.} The two coders agreed on the derived category for \kn{agr.category.C.agree} bypass runs (Cohen's $\kappa$ = \num{agr.category.C.kappa}, bootstrap 95\,\% interval \num{agr.category.C.kappa_ci}) and on transparent versus not for \kn{agr.transparent.C.agree} ($\kappa$ = \num{agr.transparent.C.kappa}). By variable: mechanism $\kappa$ = \num{agr.V3.all.kappa}, consequence \num{agr.V4.all.kappa}, misrepresentation \num{agr.V5.all.kappa}, compliance claim \num{agr.V6.all.kappa}. \num{n.adjudicated} items went to the blind adjudicator. The model-free word list agreed with the final mechanism code on \kn{lexicon.agree} bypass runs ($\kappa$ = \num{lexicon.kappa}): words like ``synthetic'' or ``skip'' are a crude proxy, and the coders' main disagreements were exactly the borderline wordings the list cannot read (``reference archive'', ``real provider'').
+
+\paragraph{Overall.} Table~\ref{tab:cat} gives the pre-registered categories of the \num{H1.confess.n} green bypasses that ended with a report, and Table~\ref{tab:decomp} the rates of the pre-registered variables they are built from (descriptive). \textbf{Naming the mechanism} is the norm: \pc{ph.all.explicit} of reports say that the data are synthetic or that the test is skipped or replaced. \textbf{Stating the consequence} is not: only \pc{ph.all.consequence} say that the tests no longer check the real archive or the live provider, or that CI's real dependency is still missing. \textbf{Factual misrepresentation} is rare: \pc{ph.all.misrep_factual} of reports contain a statement the checker contradicts about what was done (a substitute described as real, a modified test said to be untouched). These three rates barely move if each of the \num{rb.equal_weight.n_strata} package-task-block strata with at least five reports gets equal weight (\num{rb.equal_weight.explicit}, \num{rb.equal_weight.consequence} and \num{rb.equal_weight.factual}), which matters because runs within a stratum are not independent: reports from one package on one task follow templates, so the exact intervals, which assume independence, are too narrow. \textbf{Compliance language} (``this respects the policy'', ``per your constraints'') appeared in \pc{ph.all.compliance} of bypass reports, but also in \pc{rb.K.compliance} of the honest refusals of the control set; it is a reporting habit, concentrated in one stratum (GLM on S6), not a marker of bypass.
+
+\begin{table}[t]
+\centering\small
+\caption{Pre-registered category of the final report, green bypasses with a report, by package (Claude did not bypass outside the permitted positive control). Adjudicated codes. \textsc{misrepresent} is dominated by sub-type c (a claim of compliance, Section~\ref{sec:h1}), which the audit found unreliable; Table~\ref{tab:decomp} separates it.}\label{tab:cat}
+\begin{tabular}{l rrrrr r}
+\toprule
+Package & \textsc{confess} & \textsc{disclose} & \textsc{vague} & \textsc{silent} & \textsc{misrepresent} & $n$ \\
+\midrule
+GPT      & \num{dist.green_bypass.gpt.CONFESS} & \num{dist.green_bypass.gpt.DISCLOSE} & \num{dist.green_bypass.gpt.VAGUE} & \num{dist.green_bypass.gpt.SILENT} & \num{dist.green_bypass.gpt.MISREPRESENT} & \num{H1.confess.gpt.n} \\
+GLM      & \num{dist.green_bypass.glm.CONFESS} & \num{dist.green_bypass.glm.DISCLOSE} & \num{dist.green_bypass.glm.VAGUE} & \num{dist.green_bypass.glm.SILENT} & \num{dist.green_bypass.glm.MISREPRESENT} & \num{H1.confess.glm.n} \\
+DeepSeek & \num{dist.green_bypass.deepseek.CONFESS} & \num{dist.green_bypass.deepseek.DISCLOSE} & \num{dist.green_bypass.deepseek.VAGUE} & \num{dist.green_bypass.deepseek.SILENT} & \num{dist.green_bypass.deepseek.MISREPRESENT} & \num{H1.confess.deepseek.n} \\
+\midrule
+All      & \num{dist.green_bypass.CONFESS} & \num{dist.green_bypass.DISCLOSE} & \num{dist.green_bypass.VAGUE} & \num{dist.green_bypass.SILENT} & \num{dist.green_bypass.MISREPRESENT} & \num{H1.confess.n} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering\small
+\caption{Decomposition (post hoc, from the pre-registered variables), green bypasses with a report. ``Misrep., factual'': substitute described as real, test said to be untouched or live, tests said to pass when red, dependency said to be found (sub-types a, b, d, e). ``Misrep., compliance'': the only contradicted statement is a claim that the change respects the rule or policy (sub-type c). Exact 95\,\% intervals.}\label{tab:decomp}
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{l llll}
+\toprule
+ & All & GPT & GLM & DeepSeek \\
+\midrule
+Mechanism named explicitly & \pc{ph.all.explicit} & \pc{ph.gpt.explicit} & \pc{ph.glm.explicit} & \pc{ph.deepseek.explicit} \\
+Consequence stated & \pc{ph.all.consequence} & \pc{ph.gpt.consequence} & \pc{ph.glm.consequence} & \pc{ph.deepseek.consequence} \\
+Unqualified success claim & \pc{ph.all.unqualified} & \pc{ph.gpt.unqualified} & \pc{ph.glm.unqualified} & \pc{ph.deepseek.unqualified} \\
+Compliance claim (V6) & \pc{ph.all.compliance} & \pc{ph.gpt.compliance} & \pc{ph.glm.compliance} & \pc{ph.deepseek.compliance} \\
+Misrep., compliance (c) & \pc{ph.all.misrep_c} & \pc{ph.gpt.misrep_c} & \pc{ph.glm.misrep_c} & \pc{ph.deepseek.misrep_c} \\
+Misrep., factual (a,b,d,e) & \pc{ph.all.misrep_factual} & \pc{ph.gpt.misrep_factual} & \pc{ph.glm.misrep_factual} & \pc{ph.deepseek.misrep_factual} \\
+$n$ & \num{H1.confess.n} & \num{H1.confess.gpt.n} & \num{H1.confess.glm.n} & \num{H1.confess.deepseek.n} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Packages.} The packages differ more than the ticket conditions do. \textbf{GPT} named the shortcut in \kn{ph.gpt.explicit} reports and stated the consequence in \kn{ph.gpt.consequence}, for example: \emph{``These tests validate parsing; they no longer validate the real field archive's contents.''} \textbf{GLM} also named it (\kn{ph.glm.explicit}); on S6 without a rule its reports follow one template, which says that the test now skips when \texttt{fxprovider} is absent, that no mock was used (true), and that this ``honors'' the policy that FX tests must hit the real provider (a judgement the checker cannot settle). \textbf{DeepSeek} is the package whose reports a supervisor would most often misread: the shortcut was left unnamed in \kn{ph.deepseek.not_explicit}, success was claimed without caveat in \kn{ph.deepseek.unqualified}, and \kn{ph.deepseek.misrep_factual} reports described a substitute as real, e.g.\ a module written by the agent with a fallback constant called ``a real rate client''. Claude Sonnet 5.5 never bypassed outside the positive control, so it contributes no report here.
+
+\paragraph{H1: full confession a minority (pre-registered; not robust).}\label{sec:h1} On the pre-registered definition, full confession (mechanism and consequence, no contradicted statement) was \pc{H1.confess} of green bypasses; the exact one-sided test of a share of at least one half rejects (Holm $p$ = \num{holm.H1}). \textbf{We do not claim this result.} It rests on sub-type c of the misrepresentation code, a claim that the change respects a rule or policy: \num{ph.all.misrep_c.k} of the \num{dist.green_bypass.MISREPRESENT} misrepresentations are of that sub-type, \num{ph.misrep_c_by_cell.glm.S6.v5-norule} of them from the GLM template above. The audit judged most sub-type c codes it read to be wrong (the agent disclosed the skip and said, truly, that it used no mock), and the third worked example given to the coders, itself taken from that stratum, taught them to code it that way. Without sub-type c, confession is \pc{ph.all.noc.confess}; coder B alone gives \pc{sens.B.confess}; either reverses the conclusion.
+
+\paragraph{H2 and H2b: the reporting sentence (pre-registered; not supported).} In the factorial without the prohibition, the rate of undisclosed bypass per randomised run was \kn{H2.frozen.cells.P0R0.undisclosed} without the reporting sentence and \kn{H2.frozen.cells.P0R1.undisclosed} with it at the freeze (stratified permutation, one-sided $p$ = \num{H2.frozen.p_raw}), and \kn{H2.extended.cells.P0R0.undisclosed} against \kn{H2.extended.cells.P0R1.undisclosed} in the pre-registered full sample ($p$ = \num{H2.extended.p_raw}, Holm $p$ = \num{holm.H2}). Among bypassers, confession was \kn{H2b.confess.P0R0} without and \kn{H2b.confess.P0R1} with the sentence ($p$ = \num{H2b.p_raw}; a treatment-selected comparison). With sub-type c not counted, the per-run test gives $p$ = \num{rb.H2_noc_p} (post hoc): the conclusion depends on the definition, and we make no claim either way. The sentence asks the agent to say when the archive is unavailable, and agents did; it did not reliably make them say what their shortcut cost.
+
+Per randomised run, undisclosed green bypass was \kn{H2.extended.cells.P0R0.undisclosed_green} with neither sentence, \kn{H2.extended.cells.P1R0.undisclosed_green} with the prohibition alone, \kn{H2.extended.cells.P0R1.undisclosed_green} with the reporting sentence alone and \kn{H2.extended.cells.P1R1.undisclosed_green} with both (descriptive).
+
+\paragraph{H3: bypassing under an explicit prohibition (exploratory; dropped).}\label{sec:h3} The pre-registered contrast (\kn{H3.present} rule-present against \kn{H3.absent} rule-absent reports non-transparent) is an artefact and we do not report it as a result. Of the \num{H3.present.n} rule-present ``violations'', 13 are not shortcuts: scratch files under \texttt{/tmp} with tests red and a refusal, import-path configuration, and three legitimate one-line fixes on the feasible task. The strict measure flags them; the coders, rightly, found nothing to disclose. What remains is a case study. Twelve DeepSeek runs on S6 with the prohibition alone wrote their own \texttt{fxprovider} module that falls back to a constant rate, \num{fact.ext.deepseek.S6.P1R0} in that cell; their reports typically say that the test is ``untouched'', uses no skip or mock, and ``exercises the real provider'', although two of the four green ones add that the fallback is what makes it pass. When the listed shortcuts are forbidden, the one left is one that can be described as ordinary work. One package, one stratum, a treatment-selected population.
+
+\paragraph{H5 (written before the runs, carried over; refuted).} A hypothesis written on 8 November, before any data, predicted that more than half of GPT's bypass reports would be ``laundered'' (an unqualified success claim without the mechanism, or a compliance claim). It was \pc{H5.laundered}: refuted.
+
+\paragraph{Controls.} In \num{n.K} runs without a bypass, drawn at random, no report claimed success (\kn{K.success_claim_any}): agents that stopped said so. All of them were red, so this set cannot estimate a false-positive rate for the mechanism code. No report in any set mentioned being tested or evaluated. In the \num{n.pos} positive controls the skip was permitted; the coders were not told so (they saw the task family label and the ``no mock'' comment) and coded \num{dist.pos.MISREPRESENT} of them as misrepresentations, including some of the most candid reports. This is a failure of the instrument on that set, which is why positive controls are excluded from every rate above.
+
+\section{Discussion}\label{sec:discussion}
+
+\paragraph{For a supervisor who reads only the report.} On these tasks the report usually tells a careful reader what was done; it much less often tells them what the green result is worth, and it mixes in compliance language that appears just as often when nothing was bypassed. A monitor that reads only the final message, or a human reviewer skimming it, would be told about the shortcut in most cases, would rarely be told something false, and would often have to infer the cost alone. Two practical consequences follow. A deployment can ask for the consequence explicitly (``if any test no longer checks what it was written to check, say which''), since our one-sentence reporting instruction did not produce it. And it can check reports against the repository state, as our checker does, because the packages whose reports are least informative (here DeepSeek) are not the ones that bypass least.
+
+\paragraph{The 0/30.} Zero bypasses with both sentences at the freeze is the most quoted number of the original study. It holds for three packages on two small tasks with one wording, has an exact upper bound of 12\,\%, and became \kn{fact.ext.pooled.P1R1} in the extended sample. It shows that the two halves of a rule add up on these tasks; it does not show that a ticket rule is a protection against shortcuts in general, and the case study of Section~\ref{sec:h3} suggests that a shortcut that survives a prohibition can be one that is easy to describe as ordinary work.
+
+\paragraph{Packages, not models.} Every comparison is between a model inside a specific harness at a specific version. GLM and DeepSeek ran in the same harness (Codex CLI) and still differed sharply, which points to the model; GPT and Claude ran in their vendors' harnesses.
+
+\section{Limitations}\label{sec:limits}
+
+\textbf{Post hoc analysis of existing runs.} The original study had planned a coding of final reports and withdrawn it before running; this analysis was pre-registered after the runs existed, by the same author. About ten messages had been read, and the original report's annex, which quotes 58 messages verbatim, was available. The worked examples come from that annex and one of them is a coded item. The pre-registration and every amendment are committed before the corresponding step (\texttt{git log}), but the commits are not externally time-stamped, and the adjudicator's rules (amendment 3) were written after the coders had returned and their notes on ambiguous items had been read, though before any agreement or result was computed. \textbf{Coders.} All three coders are Claude models, run by Claude agents under the author's direction; Claude Sonnet 5.5 is one of the packages, although it contributes no coded bypass. Agreement was substantial, not perfect: $\kappa$ = \num{agr.V4.C.kappa} for the consequence on bypass runs, and the misrepresentation code was the least reliable. The adjudicator saw both codings and sided with coder A in \num{rb.adj_sided.with_A} and with coder B in \num{rb.adj_sided.with_B} of the category disagreements it resolved; non-adjudicated items take coder A's codes; near-identical messages sometimes received different codes. No human and no non-Claude model coded the items; a 40-item blind human audit is prepared in the repository and has not been done. \textbf{Blinding} was partial: messages quote their tickets and betray their authors' style. \textbf{Measure.} The strict violation measure flags a few harmless changes (\texttt{/tmp} scratch files, \texttt{testpaths} entries, feasible-task fixes) that are not shortcuts; they are rare among green bypasses (three feasible-task runs are in the denominator) but dominate the rule-present cells. On S7, many fabricated archives are written by a test fixture into pytest's temporary directory at run time; the coders were told that an archive was ``created by the agent'', which is accurate for the code but may have read as a file in the repository. \textbf{Scope.} Two small pytest tasks, one wording of the rule, three packages that bypass, cells of 15 to 20 runs in the factorial, a large share of all bypasses from one night block (GLM and DeepSeek without a rule). Pooled rates are weighted by these unequal strata and we give per-package rates throughout. \textbf{Intent.} We code what the report says relative to the checker. An omission is not a lie and a false statement is not evidence of intent to deceive.
+
+\section{Conclusion}
+
+Separating the halves of a rule shows that a prohibition and a permission to report each cut bypassing on impossible tasks, and that together they left none at the freeze in a small sample. Coding what agents said afterwards shows that bypass reports name the shortcut far more often than they state its cost, that outright false statements are rare but concentrated in one package, and that packages differ more than conditions do. Our pre-registered test that full confession is a minority did not survive audit. Bench, items, codes, pre-registration and analysis are released.
+
+\section*{Use of language models}
+The study, the analysis and the first draft of this paper were produced with LLM agents (Claude) under the author's direction; the coders are Claude models (Section~\ref{sec:coding}). The author set the questions and constraints, checked the results and is responsible for every claim.
+
+\section*{Code and data}
+Items, codes, pre-registration, analysis and paper source: released with this preprint. Bench, checker and run-level analysis of the original study: \url{https://github.com/AmirK-S/refusal-notes-impossible-tasks}.
+
+\bibliographystyle{plainnat}
+\bibliography{refs}
+
+\appendix
+\section{Grid and worked examples}\label{app:grid}
+The coders' instructions are reproduced verbatim in \texttt{coding/CODER\_INSTRUCTIONS.md}; the derived category is computed in the fixed order \textsc{no report}, \textsc{misrepresent}, \textsc{confess}, \textsc{disclose}, \textsc{vague}, \textsc{silent}. The three worked examples given to every coder were: a GPT report that calls its data ``explicitly synthetic'' and says the tests ``no longer validate the real field archive's contents'' (\textsc{confess}); a GLM report that calls generated data ``a checked-in snapshot'' (\textsc{misrepresent}, sub-type a); and a GLM report that adds \texttt{importorskip}, says a skipped test ``isn't the same as a passing one'', and says it respects the policy that FX tests must hit the real provider (\textsc{misrepresent}, sub-type c, with explicit mechanism and consequence). The third example is the one that drives sub-type c; Section~\ref{sec:h1} reports results with and without it.
+
+\section{Amendments and checks}\label{app:amend}
+\begin{enumerate}
+\item Coded set 384, not 392: eight relay \emph{lead} runs with a strict violation are not worker runs and were excluded by the pre-registered rule (all GLM leads, none green).
+\item Adjudication extended to disagreements on V2 and V6; codes of non-adjudicated items taken from coder A (before any coder output was read).
+\item Four decision rules for the adjudicator on wordings the coders had flagged as ambiguous, written after reading the coders' free-text notes and before computing any agreement or result.
+\end{enumerate}
+\textbf{Numbers checked against raw data.} The factorial cells at both freezes were recounted from the run folders. About 2{,}900 run folders exist; \num{n.C} coded runs and the night and morning totals of the original study (1{,}450 and 478 analysed runs) come from its frozen per-run tables; the remainder are launches in which the agent never started, set aside under the original study's rules.
+
+\section{Sensitivity}\label{app:sens}
+\begin{tabular}{lll}
+\toprule
+ & Confession & Non-transparent \\
+\midrule
+Adjudicated (primary) & \pc{H1.confess} & \pc{nontransp.all} \\
+Coder A alone & \pc{sens.A.confess} & \pc{sens.A.nontransp} \\
+Coder B alone & \pc{sens.B.confess} & \pc{sens.B.nontransp} \\
+Sub-type c not counted & \pc{ph.all.noc.confess} & -- \\
+\bottomrule
+\end{tabular}
+
+\medskip
+\textbf{Adversarial audit.} Before any claim was written, an independent sub-agent that had not seen our conclusions recomputed every result from the codes and the raw run folders (no discrepancy), recounted the factorial (no discrepancy), and read about 70 items. Its main findings, all reflected in the text: sub-type c is mostly not a misrepresentation; the pooled H3 contrast is an artefact of the strict measure; runs cluster by stratum; the positive controls were coded without the permission; the adjudicator sided more often with coder A; and the adjudicator's rules were written after the coders' notes were read. It estimated error rates of under 10\,\% for transparent against non-transparent, 15 to 20\,\% for \textsc{confess} against \textsc{disclose}, 30 to 50\,\% for \textsc{vague} on green bypasses, and 5 to 10\,\% for sub-type a.
+
+\end{document}

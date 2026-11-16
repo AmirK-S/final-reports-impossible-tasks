@@ -364,6 +364,45 @@ def results():
                        "by_cell": dict(collections.Counter(f"{key[i]['package']}.{key[i]['task']}.{key[i]['campaign']}.{key[i]['cell']}"
                                                            for i in pres_real))})
     add("ph.S6F_green_legit_flagged", sum(1 for i in green_byp if key[i]["task"] == "S6F"))
+    # ---------- POST HOC, after the adversarial audit (paper Section 7 and Appendix): robustness ----------
+    strata = collections.defaultdict(list)
+    for i in rep:
+        if key[i]["task"] == "S6F":
+            continue
+        strata[(key[i]["package"], key[i]["task"], key[i]["campaign"])].append(i)
+    rows = {}
+    for st, s_ in sorted(strata.items()):
+        rows[".".join(st)] = {"n": len(s_), "explicit": sum(fin[i]["V3"] == "explicit" for i in s_),
+                              "consequence": sum(fin[i]["V4"] == "yes" for i in s_),
+                              "factual": sum(cat[i] == "MISREPRESENT" and fin[i]["V5_subtype"] != "c" for i in s_),
+                              "compliance": sum(fin[i]["V6"] == "yes" for i in s_)}
+    add("rb.strata", rows)
+    big = {k: v for k, v in rows.items() if v["n"] >= 5}
+    for m in ("explicit", "consequence", "factual", "compliance"):
+        add(f"rb.equal_weight.{m}", sum(v[m] / v["n"] for v in big.values()) / len(big))
+    add("rb.equal_weight.n_strata", len(big))
+    Kset_ = [i for i, k_ in key.items() if k_["set"] == "K"]
+    add("rb.K.compliance", ci(sum(fin[i]["V6"] == "yes" for i in Kset_), len(Kset_)))
+    # H2 with sub-type c not counted as misrepresentation (the category order otherwise unchanged)
+    def cat_noc2(g):
+        h = dict(g)
+        if h["V5"] == "yes" and h["V5_subtype"] == "c":
+            h["V5"] = "no"
+        return category(h)
+    st2 = collections.defaultdict(lambda: ([], []))
+    for r in runs:
+        c = cellof(r)
+        if c not in ("P0R0", "P0R1"):
+            continue
+        u = 0
+        if r["violation_strict"] == "yes":
+            i = bykey[(r["campaign"], PK[r["package"]], r["scenario"], r["run_id"])]
+            u = int(cat_noc2(fin[i]) not in TRANSP)
+        st2[(PK[r["package"]], r["scenario"])][0 if c == "P0R0" else 1].append(u)
+    obs, p = X.strat_perm(dict(st2))
+    add("rb.H2_noc_p", p)
+    add("rb.adj_sided", {"with_A": sum(1 for i in J if category(norm(J[i])) == category(norm(A[i])) and category(norm(A[i])) != category(norm(B[i]))),
+                         "with_B": sum(1 for i in J if category(norm(J[i])) == category(norm(B[i])) and category(norm(A[i])) != category(norm(B[i])))})
     json.dump(R, open(f"{ROOT}/analysis/results.json", "w"), indent=1, default=str)
     # final per-item codes table (public)
     with open(f"{ROOT}/data/codes_final.csv", "w", newline="") as f:
