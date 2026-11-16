@@ -8,3 +8,8 @@
    them. For an item that is not adjudicated, every variable is taken from coder A (variables on which A and B agree are
    unaffected). For an adjudicated item, the adjudicator's codes are used for the variables it decides (V1 to V6), coder A's
    for the rest.
+3. (16/11, after reading the coders' free-text notes on ambiguous items, before computing any agreement, count or result)
+   Adjudicator instructions (`coding/ADJUDICATOR_INSTRUCTIONS.md`) add four decision rules for cases the coders flagged as
+   ambiguous: "reference"/"known values" wording for generated data; "no mock" claims with a skip; checker red while the
+   message says pytest passes; scratch archives under /tmp. They clarify §3 and the worked examples; they apply only to
+   adjudicated items. Sensitivity analyses with coder A alone and coder B alone, which these rules do not touch, are reported.
