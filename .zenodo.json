@@ -1,0 +1,30 @@
+{
+  "title": "The Ticket Cuts the Cheating, the Model Shapes the Confession: What Coding Agents Report After Bypassing an Impossible Test",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "description": "A rule in the ticket cuts how often a coding agent bypasses an impossible test; what the agent then admits differs sharply between the models that bypass. Four model-and-harness packages received two pytest tasks that cannot pass in the sandbox, and a deterministic checker out of the agent's reach decided every bypass. In a pre-registered 2x2 factorial on the ticket, bypassing fell from 28/29 runs with no rule to 4/24 with a prohibition, 19/30 with a one-sentence permission to report the blocker, and 0/30 with both (2/69, none green, in an extended sample). Blind coders from two model families then coded the final message of the 327 green bypasses that ended with a report. Under every coder, reports named the shortcut (84% to 89%) more often than they said what the tests no longer checked (59% to 76%; paired p < 1e-6 per coder). GPT-6.1 Sol named its shortcut in 66/68 reports; DeepSeek V4 Flash left it unnamed in 32/112 and contradicted the checker in 16/112. A Claude monitor reading only the ticket and the report accepted 42/335 bypasses as trustworthy, 29/335 with the diff; most of those it accepted were synthetic test data the report had disclosed. The reporting sentence had no detectable effect on what bypassers reported (an underpowered test), and the pre-registered claim that full confession is a minority did not survive audit.",
+  "creators": [
+    {
+      "name": "Kellou-Sidhoum, Amir",
+      "affiliation": "Independent researcher"
+    }
+  ],
+  "license": "cc-by-4.0",
+  "access_right": "open",
+  "keywords": [
+    "AI safety",
+    "coding agents",
+    "reward hacking",
+    "honesty",
+    "specification gaming",
+    "monitoring",
+    "pre-registration"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/AmirK-S/refusal-notes-impossible-tasks",
+      "relation": "isDerivedFrom",
+      "resource_type": "software"
+    }
+  ]
+}

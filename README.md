@@ -34,7 +34,7 @@ ChatGPT plan).
 | `analysis/crossfamily.py`, `coding/out/X/` | GPT-6.1 Sol coder and its agreement with the Claude coders |
 | `monitor/` | monitor items, instructions, outputs (`out/claude`, `out/gpt`) and `analyze_monitor.py` |
 | `verify/recount_raw.py` | independent recount of the factorial from raw run folders |
-| `chain/`, `sentinel/` | pre-registration and raw sentinel results for a follow-up study; not used in this paper |
+| `chain/`, `sentinel/` | pre-registration and raw results of the sentinel probe (one limitation in the paper) and of a follow-up study |
 | `paper/` | LaTeX source; every number is a macro from `paper/numbers.tex`; `make_figure.py` draws Figure 1 |
 
 ## Reproduce
