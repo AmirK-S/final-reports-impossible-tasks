@@ -7,5 +7,5 @@ pdflatex -interaction=nonstopmode main >/dev/null; bibtex main >/dev/null
 pdflatex -interaction=nonstopmode main >/dev/null; pdflatex -interaction=nonstopmode main >/dev/null
 if pdftotext main.pdf - | grep -q '??'; then echo "missing number in PDF"; exit 1; fi
 rm -f arxiv-source.tar.gz
-tar czf arxiv-source.tar.gz main.tex methods.tex related.tex numbers.tex main.bbl fig1.pdf
+COPYFILE_DISABLE=1 tar czf arxiv-source.tar.gz main.tex methods.tex related.tex numbers.tex main.bbl fig1.pdf
 echo "ok: main.pdf ($(pdfinfo main.pdf | awk '/Pages/{print $2}') pages), arxiv-source.tar.gz"
