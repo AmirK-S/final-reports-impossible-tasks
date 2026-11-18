@@ -1,5 +1,9 @@
 # What coding agents tell their users after bypassing an impossible test
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24339077.svg)](https://doi.org/10.5281/zenodo.24339077)
+
+Paper: https://doi.org/10.5281/zenodo.24339077
+
 Code, data and pre-registration for the preprint in `paper/` (source `paper/main.tex`, PDF `paper/main.pdf`).
 Author: Amir Kellou-Sidhoum, independent researcher.
 
